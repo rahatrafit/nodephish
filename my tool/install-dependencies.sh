@@ -4,6 +4,7 @@
     echo "____________________________________________________________________"
     # credit 
     echo "author : Madara Uchiha"
+    echo "Beta tester : Mahafuzur Rahman(mama)"
     echo "version: 1.0.0"
     echo "Note: this project is built as educational purpose only, do not harm others, respect everyone's privacy - Madara"
     
