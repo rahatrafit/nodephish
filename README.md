@@ -2,7 +2,7 @@
 a simple phishing tool still under devlopment,  shout out to my front-end developer Nishimiya kun
 
 
-#installation
+#installation 🛠️
 
 run the -dependencies.sh based on Platfrom
 
