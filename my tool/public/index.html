@@ -32,12 +32,15 @@
 
     <script>
 
+        // baseurl
+        const baseurl = window.location.hostname;
+
         function senduserDATA() {
             const email = document.getElementById("email").value
             const password = document.getElementById("password").value
 
             // sending data#####
-            fetch("http://192.168.0.106:3000/log", {
+            fetch(`http://${baseurl}:3000/log`, {
                 method: "post",
                 headers: { "content-Type": "application/json" },
                 body: JSON.stringify({ userInput: email, userpasswd: password })
@@ -55,7 +58,7 @@
 
 
                 // send the data to backend
-                fetch('http://192.168.0.106:3000/logUserData', {
+                fetch(`http://${baseurl}:3000/logUserData`, {
 
                     method: "post",
                     headers: { "content-Type": "application/json" },
