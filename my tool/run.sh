@@ -1,10 +1,12 @@
 #!/bin/bash
 
-# Check if Node.js is installed locally (inside the project directory)
-if [ -f "./node/bin/node" ]; then
-    echo "Starting server using local Node.js..."
-    ./node/bin/node server.js
-else
-    echo "Node.js is not installed locally. Please run the dependency installation script first."
-    exit 1
-fi
+    echo "Initialaizing /\/\/\/\/\.."
+    echo "____________________________________________________________________"
+    # credit 
+    echo "author : Madara Uchiha"
+    echo "version: 1.0.0"
+    echo "Note: this project is built as educational purpose only, do not harm others, respect everyone's privacy - Madara"
+    
+    
+    npm install
+    node server.js
