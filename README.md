@@ -3,6 +3,7 @@ a simple phishing tool still under devlopment,  shout out to my front-end develo
 
 
 #installation
+
 run the -dependencies.sh based on Platfrom
 
 run the run.sh script 
